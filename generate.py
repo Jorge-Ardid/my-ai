@@ -1,79 +1,42 @@
-import os
 import requests
-import random
-from datetime import datetime
+import os
 
-# Отримуємо ключ, який ви вже додали в Secrets
-HF_TOKEN = os.getenv("HF_TOKEN")
-# Використовуємо модель, яка краще пише англійською для Google
-MODEL = "google/flan-t5-large"
-API_URL = f"https://api-inference.huggingface.co/models/{MODEL}"
-HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
+# 1. Читаємо тему
+try:
+    with open('keywords.txt', 'r') as f:
+        topic = f.readline().strip()
+    if not topic: topic = "Best Tech Gadgets 2026"
+except:
+    topic = "Smart Home Devices"
 
-# Сюди ви потім вставите своє реальне партнерське посилання
-AFFILIATE_LINK = "https://example.com/?ref=yourid"
+# 2. Потужніша нейромережа (Mistral)
+API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2"
+headers = {"Authorization": f"Bearer {os.getenv('HF_TOKEN')}"}
 
-def generate_article(keyword):
-    prompt = f"Write a detailed blog post about {keyword}. Include benefits and conclusion."
-    
+def get_text(topic):
+    prompt = f"Write a professional product review about {topic}. Focus on benefits."
     try:
-        response = requests.post(
-            API_URL,
-            headers=HEADERS,
-            json={"inputs": prompt, "parameters": {"max_length": 500}}
-        )
-        data = response.json()
-        
-        # Перевірка на успішну відповідь від нейромережі
-        if isinstance(data, list) and "generated_text" in data[0]:
-            return data[0]["generated_text"]
-        return "Content is being updated, please refresh in a few minutes."
-    except Exception as e:
-        return f"Generation pause: {str(e)}"
+        response = requests.post(API_URL, headers=headers, json={"inputs": prompt, "parameters": {"max_new_tokens": 250}})
+        result = response.json()
+        if isinstance(result, list):
+            return result[0]['generated_text'].split(prompt)[-1].strip()
+        return "Expert review is being updated. Stay tuned!"
+    except:
+        return "Check out the best deals on this product below."
 
-def create_html(title, content):
-    # Читаємо ваш шаблон
-    with open("template.html", "r", encoding="utf-8") as f:
-        template = f.read()
+# 3. Генеруємо контент
+article_text = get_text(topic)
 
-    # ВАЖЛИВО: замінюємо маленькі літери, як у вашому template.html
-    return template.replace("{{title}}", title)\
-                   .replace("{{content}}", content)\
-                   .replace("{{AFFILIATE}}", AFFILIATE_LINK)
-
-def main():
-    # Читаємо теми зі списку
-    if not os.path.exists("keywords.txt"):
-        print("Error: keywords.txt not found")
-        return
-
-    with open("keywords.txt", "r", encoding="utf-8") as f:
-        keywords = [line.strip() for line in f.readlines() if line.strip()]
-
-    if not keywords:
-        print("Error: keywords.txt is empty")
-        return
-
-    # Обираємо випадкову тему
-    keyword = random.choice(keywords)
-    print(f"Generating article for: {keyword}")
+# 4. Оновлюємо дизайн
+if os.path.exists('template.html'):
+    with open('template.html', 'r') as f:
+        html = f.read()
     
-    article = generate_article(keyword)
-
-    # Створюємо фінальний HTML
-    html_content = create_html(keyword, article)
-
-    # Зберігаємо в папку docs для сайту
-    os.makedirs("docs", exist_ok=True)
+    html = html.replace('{{title}}', topic)
+    html = html.replace('{{content}}', article_text)
     
-    # Робимо назву файлу зручною для посилань
-    safe_name = keyword.lower().replace(' ', '_')
-    filename = f"docs/{safe_name}.html"
-    
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(html_content)
-
-    print(f"Successfully generated: {filename}")
-
-if __name__ == "__main__":
-    main()
+    # Зберігаємо результат
+    file_path = f"docs/{topic.replace(' ', '_').lower()}.html"
+    with open(file_path, 'w') as f:
+        f.write(html)
+    print(f"Done! Created: {file_path}")
