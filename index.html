@@ -2,22 +2,37 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Мій AI Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tech Hub | Найкращі огляди 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #333; }
-        .links { margin-top: 20px; }
-        a { color: #007bff; text-decoration: none; font-size: 18px; }
-        a:hover { text-decoration: underline; }
+        :root { --primary: #6366f1; --bg: #f3f4f6; --text: #1f2937; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); margin: 0; }
+        nav { background: white; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); text-align: center; }
+        .hero { padding: 60px 20px; text-align: center; background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: white; }
+        .container { max-width: 1000px; margin: -40px auto 40px; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.05); transition: 0.3s; text-decoration: none; color: inherit; display: block; border: 1px solid #e5e7eb; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px rgba(0,0,0,0.1); border-color: var(--primary); }
+        .card h3 { margin-top: 0; color: var(--primary); }
+        .tag { background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>Мій Автоматичний Блог</h1>
-    <p>Ось список моїх оглядів товарів, які допоможуть вам з вибором:</p>
-    <div class="links">
-        <ul>
-            <li><a href="docs/best_laptop_for_programming_students.html">Найкращий ноутбук для програмування (2026)</a></li>
-        </ul>
+    <nav><strong>AI TECH HUB</strong></nav>
+    <div class="hero">
+        <h1>Розумний вибір техніки 2026</h1>
+        <p>Автоматичні огляди на основі нейромереж</p>
+    </div>
+    <div class="container">
+        <div class="grid">
+            <a href="docs/best_laptop_for_programming_students.html" class="card">
+                <span class="tag">Ноутбуки</span>
+                <h3>Найкращий ноутбук для програмування (2026)</h3>
+                <p>Детальний розбір характеристик, тестів та реальної продуктивності для студентів-розробників.</p>
+                <strong>Читати огляд ➔</strong>
+            </a>
+        </div>
     </div>
 </body>
 </html>
