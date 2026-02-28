@@ -20,7 +20,7 @@ jobs:
       - name: Run generator
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python docs/generate.py
+        run: python generate.py
 
       - name: Commit files
         run: |
