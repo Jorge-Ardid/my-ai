@@ -1,0 +1,34 @@
+name: Auto Blog Generator
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run generator
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python generate.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@example.com"
+          git add .
+          git commit -m "auto article"
+          git push
