@@ -1,0 +1,32 @@
+name: Auto Blog Generator
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run generator
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python GENERATE.PY
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/*
+          git commit -m "Add generated article" || echo "No changes to commit"
+          git push
+          
