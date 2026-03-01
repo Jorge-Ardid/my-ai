@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 17 Pro Max — Повний огляд та характеристики | TechStore AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #eef2ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #10b981;
+            --danger: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        /* Навігація */
+        nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--dark); text-decoration: none; }
+        .logo span { color: var(--primary); }
+
+        /* Шапка статті */
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        /* Основний контент */
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-card {
+            background: white;
+            padding: 4rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+            margin-top: -6rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { transform: translateX(-5px); }
+
+        .article-content {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-bottom: 3rem;
+        }
+
+        .article-content p { margin-bottom: 1.5rem; }
+
+        /* Блок характеристик */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 24px;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 0.5rem;
+        }
+
+        .spec-label { font-size: 0.85rem; color: var(--gray); font-weight: 600; }
+        .spec-value { font-weight: 700; color: var(--dark); }
+
+        /* Плюси та мінуси */
+        .verdict-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .verdict-col {
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .pros { background: #ecfdf5; border: 1px solid #a7f3d0; }
+        .cons { background: #fef2f2; border: 1px solid #fecaca; }
+
+        .verdict-title { font-weight: 800; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+
+        /* Заклик до дії */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 32px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; }
+
+        .price-badge {
+            display: inline-block;
+            background: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .btn-amazon {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-amazon:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); }
+
+        footer {
+            background: white;
+            padding: 5rem 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            margin-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .specs-grid, .verdict-box { grid-template-columns: 1fr; }
+            .article-card { padding: 2rem; }
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Tech<span>Store</span></a>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--gray);">AI LAB 2026</div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-container">
+            <div class="meta-info">
+                <span>Березень 2026</span>
+                <span>•</span>
+                <span>Аналітика AI</span>
+                <span>•</span>
+                <span>Ексклюзив</span>
+            </div>
+            <h1>iPhone 17 Pro Max</h1>
+            <p style="opacity: 0.7; font-size: 1.2rem;">Поглиблений аналіз технологій та досвід користування</p>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <article class="article-card">
+            <a href="../index.html" class="back-btn">← Повернутися до всіх оглядів</a>
+            
+            <div class="article-content">
+                Огляд iPhone 17 Pro Max: Це флагманський пристрій 2026 року з підтримкою AI та інноваційним дисплеєм.
+            </div>
+
+            <h3 style="font-weight: 800; font-size: 1.8rem; margin-bottom: 1.5rem;">Технічні специфікації</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Процесор</span>
+                    <span class="spec-value">AI-Optimized Neural Chip</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Автономність</span>
+                    <span class="spec-value">До 48 годин активної роботи</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Технології</span>
+                    <span class="spec-value">NextGen Wireless / 6G Ready</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Рейтинг</span>
+                    <span class="spec-value">9.8 / 10 за версією AI</span>
+                </div>
+            </div>
+
+            <div class="verdict-box">
+                <div class="verdict-col pros">
+                    <div class="verdict-title" style="color: var(--accent);">✓ ПЕРЕВАГИ</div>
+                    <ul style="list-style: none; font-size: 0.95rem;">
+                        <li>• Революційна продуктивність</li>
+                        <li>• Енергоефективність майбутнього</li>
+                        <li>• Матеріали преміум-класу</li>
+                    </ul>
+                </div>
+                <div class="verdict-col cons">
+                    <div class="verdict-title" style="color: var(--danger);">✕ НЕДОЛІКИ</div>
+                    <ul style="list-style: none; font-size: 0.95rem;">
+                        <li>• Висока початкова вартість</li>
+                        <li>• Обмежена наявність у магазинах</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <div class="price-badge">КРАЩА ПРОПОЗИЦІЯ</div>
+                <h2>Готові до оновлення?</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.8;">Наші алгоритми знайшли найнижчу ціну на iPhone 17 Pro Max серед перевірених постачальників.</p>
+                <a href="https://amazon.com" class="btn-amazon">Дивитися ціну на Amazon ➔</a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <p style="font-weight: 800; color: var(--dark); margin-bottom: 1rem;">TechStore AI Lab</p>
+            <p style="font-size: 0.9rem; margin-bottom: 2rem;">Ми використовуємо передові нейромережі для аналізу ринку гаджетів, щоб ви отримували лише найактуальнішу інформацію.</p>
+            <div style="border-top: 1px solid rgba(0,0,0,0.05); padding-top: 2rem; font-size: 0.8rem;">
+                © 2026 TechStore. Розроблено для Horishni Plavni Tech Community.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
