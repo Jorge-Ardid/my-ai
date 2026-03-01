@@ -6,31 +6,106 @@
     <title>{{title}} | TechStore Review</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #4f46e5; --dark: #0f172a; --light: #f8fafc; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; margin: 0; }
-        header { background: var(--dark); color: white; padding: 2rem 1rem; text-align: center; }
-        .container { max-width: 800px; margin: 2rem auto; background: white; padding: 3rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .back-link { display: inline-block; margin-bottom: 2rem; text-decoration: none; color: var(--primary); font-weight: 600; }
-        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
-        .content { font-size: 1.15rem; color: #475569; white-space: pre-wrap; }
-        .cta-box { margin-top: 3rem; padding: 2.5rem; background: #f1f5f9; border-radius: 20px; text-align: center; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-        .btn:hover { background: var(--primary-hover); transform: translateY(-3px); }
-        footer { text-align: center; padding: 3rem; color: var(--gray); }
+        :root {
+            --primary: #4f46e5;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .content {
+            font-size: 1.15rem;
+            color: #475569;
+            white-space: pre-wrap;
+        }
+
+        .cta-box {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: #f1f5f9;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+        }
     </style>
 </head>
 <body>
-    <header><h1>TechStore AI Analysis</h1></header>
+    <header>
+        <h1>TechStore AI Analysis</h1>
+    </header>
     <div class="container">
-        <a href="../index.html" class="back-link">← Назад до списку</a>
+        <a href="../index.html" class="back-link">← Назад до каталогу</a>
         <h1>{{title}}</h1>
         <div class="content">{{content}}</div>
         <div class="cta-box">
             <h3>Сподобався огляд?</h3>
-            <p>Ви можете придбати {{title}} за найкращою ціною вже зараз.</p>
-            <a href="https://amazon.com" class="btn">Перевірити ціну на Amazon ➔</a>
+            <p>Дізнайтеся більше про технічні характеристики та актуальну ціну {{title}}.</p>
+            <a href="https://amazon.com" class="btn">Перевірити на Amazon ➔</a>
         </div>
     </div>
-    <footer>© 2026 TechStore AI</footer>
+    <footer>
+        <p>© 2026 TechStore AI Review System</p>
+    </footer>
 </body>
 </html>
