@@ -8,7 +8,6 @@
     <style>
         :root {
             --primary: #4f46e5;
-            --primary-hover: #4338ca;
             --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
@@ -34,14 +33,6 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .container {
@@ -54,7 +45,7 @@
             margin-bottom: 2rem;
             font-size: 1.75rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #ffffff; /* ТЕПЕР ВИДНО */
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
@@ -69,7 +60,7 @@
             border-radius: 24px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.3s;
             text-decoration: none;
             color: inherit;
             display: flex;
@@ -79,7 +70,6 @@
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
             border-color: var(--primary);
         }
 
@@ -90,28 +80,15 @@
             border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 600;
-            align-self: flex-start;
             margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .card p {
-            color: var(--gray);
-            margin-bottom: 2rem;
-            flex-grow: 1;
+            display: inline-block;
         }
 
         .btn-link {
-            display: flex;
-            align-items: center;
             color: var(--primary);
             font-weight: 700;
-            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
         }
 
         footer {
@@ -119,7 +96,6 @@
             color: #94a3b8;
             text-align: center;
             padding: 4rem 1rem;
-            margin-top: 4rem;
         }
     </style>
 </head>
@@ -127,17 +103,17 @@
 
     <header>
         <h1>TechStore</h1>
-        <p>Професійні огляди техніки майбутнього, створені штучним інтелектом.</p>
+        <p>Експертні AI-огляди техніки 2026</p>
     </header>
 
     <div class="container">
         <h2 class="section-title">Свіжі надходження</h2>
-        <div class="products" id="main-grid">
+        <div class="products">
 </div>
     </div>
 
     <footer>
-        <p>© 2026 TechStore AI. Усі права захищені.</p>
+        <p>© 2026 TechStore AI. Всі права захищені.</p>
     </footer>
 
 </body>
