@@ -8,7 +8,6 @@
         :root { --primary: #0d6efd; --dark: #0f172a; --light: #f8fafc; }
         body { font-family: system-ui, -apple-system, sans-serif; background: var(--light); color: var(--dark); margin: 0; padding: 0; }
         header { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; padding: 3rem 1rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
         .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
         .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
         .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
@@ -23,13 +22,20 @@
 
     <header>
         <h1>TechStore</h1>
-        <p>Тільки чесні AI-огляди техніки 2026</p>
+        <p>Сучасні гаджети та AI-аналітика</p>
     </header>
 
     <div class="container">
-        <h2>Популярні огляди</h2>
+        <h2>Наші огляди</h2>
         <div class="products">
-</div>
+            <a href="docs/iphone_17_pro.html" class="card">
+                <div class="card-content">
+                    <h3>iPhone 17 Pro</h3>
+                    <p>Повний розбір характеристик та нових можливостей камери в моделі 2026 року.</p>
+                    <div class="price-tag">Читати огляд ➔</div>
+                </div>
+            </a>
+            </div>
     </div>
 
     <footer>
