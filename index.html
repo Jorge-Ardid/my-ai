@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore | AI Гаджети</title>
+    <title>TechStore | AI Огляди</title>
     <style>
         :root { --primary: #0d6efd; --dark: #0f172a; --light: #f8fafc; }
-        body { font-family: system-ui, -apple-system, sans-serif; background: var(--light); color: var(--dark); margin: 0; }
-        header { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; padding: 3.5rem 1rem; text-align: center; }
-        nav { background: var(--dark); padding: 1rem; position: sticky; top: 0; z-index: 100; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 1.5rem; font-weight: 500; }
-        .container { max-width: 1280px; margin: 2.5rem auto; padding: 0 1.5rem; }
-        .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
-        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: 0.25s; text-decoration: none; color: inherit; }
-        .card:hover { transform: translateY(-8px); }
-        .card-content { padding: 1.4rem; text-align: center; }
-        .price { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0.8rem 0; }
-        footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 2.5rem 1rem; margin-top: 4rem; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: var(--light); color: var(--dark); margin: 0; padding: 0; }
+        header { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; padding: 3rem 1rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .card-content { padding: 1.5rem; }
+        .card h3 { margin: 0 0 1rem 0; color: var(--dark); font-size: 1.25rem; }
+        .price-tag { display: inline-block; background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-weight: bold; }
+        footer { background: var(--dark); color: white; text-align: center; padding: 2rem; margin-top: 4rem; }
     </style>
 </head>
 <body>
-    <header><h1>TechStore</h1><p>Найкращі огляди від AI</p></header>
-    <nav><a href="index.html">Головна</a><a href="#">Новинки</a></nav>
+
+    <header>
+        <h1>TechStore</h1>
+        <p>Тільки чесні AI-огляди техніки 2026</p>
+    </header>
+
     <div class="container">
-        <h2>Останні огляди</h2>
-        <div class="products" id="article-list">
-            </div>
+        <h2>Популярні огляди</h2>
+        <div class="products">
+</div>
     </div>
-    <footer><p>© 2026 TechStore · Horishni Plavni</p></footer>
+
+    <footer>
+        <p>© 2026 TechStore · Всі посилання активні</p>
+    </footer>
+
 </body>
 </html>
