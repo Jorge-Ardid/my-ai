@@ -1,18 +1,23 @@
-name: Auto Blog Generator
+name: Generate AI Content
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.9'
 
       - name: Install dependencies
         run: pip install requests
@@ -22,11 +27,10 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python generate.py
 
-      - name: Commit files
+      - name: Commit and push changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add docs/*
-          git commit -m "Add generated article" || echo "No changes to commit"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Автоматичне додавання огляду" || echo "Змін немає"
           git push
-          
