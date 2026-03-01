@@ -28,8 +28,6 @@
             color: white;
             padding: 5rem 1rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         header h1 {
@@ -50,15 +48,14 @@
             max-width: 1200px;
             margin: -3rem auto 4rem;
             padding: 0 1.5rem;
-            position: relative;
-            z-index: 10;
         }
 
         .section-title {
             margin-bottom: 2rem;
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--dark);
+            color: white; /* ВИПРАВЛЕНО: тепер видно на темному фоні */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .products {
@@ -101,7 +98,6 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
-            line-height: 1.3;
         }
 
         .card p {
@@ -110,7 +106,7 @@
             flex-grow: 1;
         }
 
-        .card .btn-link {
+        .btn-link {
             display: flex;
             align-items: center;
             color: var(--primary);
@@ -123,6 +119,7 @@
             color: #94a3b8;
             text-align: center;
             padding: 4rem 1rem;
+            margin-top: 4rem;
         }
     </style>
 </head>
@@ -130,17 +127,17 @@
 
     <header>
         <h1>TechStore</h1>
-        <p>Майбутнє техніки в наших експертних AI-оглядах. Читайте, порівнюйте, обирайте найкраще.</p>
+        <p>Майбутнє техніки в наших експертних AI-оглядах 2026.</p>
     </header>
 
     <div class="container">
         <h2 class="section-title">Свіжі надходження</h2>
         <div class="products">
-            </div>
+</div>
     </div>
 
     <footer>
-        <p>© 2026 TechStore AI. Horishni Plavni Labs. Всі права захищені.</p>
+        <p>© 2026 TechStore AI. Всі права захищені.</p>
     </footer>
 
 </body>
