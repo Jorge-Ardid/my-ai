@@ -1,15 +1,15 @@
 name: Generate AI Content
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Дозволяє запускати вручну кнопкою у вкладці Actions
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 * * * *' # ЗАПУСК ЩОГОДИНИ (о 00 хвилині кожної години)
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # КРИТИЧНО: дає боту право записувати статті
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,5 +32,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Додано новий AI огляд" || echo "Змін немає"
+          git commit -m "Автоматичне додавання огляду (щогодинне)" || echo "Змін немає"
           git push
